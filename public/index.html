@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scrum Poker</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Scrum Poker</h1>
+      <p class="status" id="status" aria-live="polite">Connecting…</p>
+    </header>
+
+    <form class="join" id="join-form">
+      <label for="join-name">Your name</label>
+      <div class="join-row">
+        <input id="join-name" name="name" maxlength="24" autocomplete="off"
+               placeholder="e.g. Adam" required>
+        <button type="submit">Join</button>
+      </div>
+      <p class="hint">Kept for this browser tab only.</p>
+    </form>
+
+    <section class="board" id="board" hidden>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="col-name">Name</th>
+            <th scope="col" class="col-vote">BE</th>
+            <th scope="col" class="col-vote">FE</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+        <tfoot id="summary" hidden>
+          <tr>
+            <th scope="row">Average</th>
+            <td class="col-vote" id="summary-be">–</td>
+            <td class="col-vote" id="summary-fe">–</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="actions">
+        <button type="button" id="reveal">Reveal</button>
+        <button type="button" id="reset" class="secondary">New round</button>
+        <span class="round" id="round"></span>
+      </div>
+      <p class="hint">Enter a number or <code>?</code> in each column. Values stay hidden until someone reveals.</p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

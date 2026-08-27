@@ -1,0 +1,13 @@
+{
+  "name": "scrum-poker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny shared scrum poker board with BE and FE estimate columns",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
